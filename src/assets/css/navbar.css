@@ -1,0 +1,31 @@
+.navbar.navbar-container {
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    color: #FFF;
+    padding: 10px;
+    transition: .2s linear;
+}
+
+.navbar.navbar-container a {
+    color: #FFF;
+}
+
+.navbar-title {
+    visibility: hidden;
+}
+
+.navbar.navbar-container.nav-bg-opaque {
+    background-color: #FFF;
+    color: #000;
+    border-bottom: 1px solid #0E0E52;
+}
+
+.navbar.navbar-container.nav-bg-opaque .navbar-title {
+    visibility: visible;
+}
+
+
+.navbar.navbar-container.nav-bg-opaque a:not(.button) {
+    color: #000;
+}

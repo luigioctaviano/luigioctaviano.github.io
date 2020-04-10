@@ -1,21 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Luigi Octaviano's Vue.js App"/>
+    <Navbar/>
+    <router-view/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from '@/components/partials/Navbar'
+import Footer from '@/components/partials/Footer'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    'Navbar': Navbar,
+    'Footer': Footer,
   }
 }
 </script>
 
 <style>
   @import url('assets/css/app.css');
+  @import url('https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css');
 </style>
