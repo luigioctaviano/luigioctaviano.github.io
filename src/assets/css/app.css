@@ -1,10 +1,10 @@
 @import url('home.css');
 @import url('navbar.css');
 @import url('footer.css');
-@import url('../fonts/fonts.css');
+@import url('~@/assets/fonts/fonts.css');
 
 #app {
-    font-family: 'Avenir Book', Helvetica, Arial, sans-serif;
+    font-family: 'Avenir Book', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;

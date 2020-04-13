@@ -2,7 +2,7 @@
     font-family: 'Avenir Book';
     font-style: normal;
     font-weight: normal;
-    src: local('Avenir Book'), url('/assets/fonts/AvenirLTStd-Book.otf') format('otf');
+    src: url('~@/assets/fonts/AvenirLTStd-Book.otf');
 }
 
 
@@ -10,7 +10,7 @@
     font-family: 'Avenir Medium';
     font-style: normal;
     font-weight: normal;
-    src: local('Avenir Medium'), url('/assets/fonts/AvenirLTStd-Medium.otf') format('otf');
+    src: url('~@/assets/fonts/AvenirLTStd-Medium.otf');
 }
 
 
@@ -18,5 +18,5 @@
     font-family: 'Avenir Roman';
     font-style: normal;
     font-weight: normal;
-    src: local('Avenir Roman'), url('/assets/fonts/AvenirLTStd-Roman.otf') format('otf');
+    src: url('~@/assets/fonts/AvenirLTStd-Roman.otf');
 }

@@ -20,6 +20,5 @@ export default {
 </script>
 
 <style>
-  @import url('assets/css/app.css');
   @import url('https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css');
 </style>
