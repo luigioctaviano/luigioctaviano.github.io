@@ -1,22 +1,6 @@
 @font-face {
-    font-family: 'Avenir Book';
+    font-family: 'Mallanna Regular';
     font-style: normal;
     font-weight: normal;
-    src: url('~@/assets/fonts/AvenirLTStd-Book.otf');
-}
-
-
-@font-face {
-    font-family: 'Avenir Medium';
-    font-style: normal;
-    font-weight: normal;
-    src: url('~@/assets/fonts/AvenirLTStd-Medium.otf');
-}
-
-
-@font-face {
-    font-family: 'Avenir Roman';
-    font-style: normal;
-    font-weight: normal;
-    src: url('~@/assets/fonts/AvenirLTStd-Roman.otf');
+    src: url('~@/assets/fonts/Mallanna-Regular.ttf');
 }
