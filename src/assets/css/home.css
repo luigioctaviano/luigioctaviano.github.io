@@ -39,12 +39,67 @@
 
 /*About Container*/
 
-.about-container {
+.about-container,
+.works-container {
     height: 100vh;
     margin-top: 25px;
     margin-bottom: 25px;
     width: 100%;
 }
+
+.header-content .title {
+    color: #0D0D52;
+    font-weight: bolder;
+}
+
+.header-content .title:before {
+    content:"-";
+    margin-right: 10px;
+}
+
+.header-content .title:after {
+    content:"-";
+    margin-left: 10px;
+}
+
+.about-content {
+    padding: 15px 0;
+    border-bottom: 3px dashed #3E5290;
+}
+
+.pic-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.pic-content {
+    height: 200px;
+    width: 200px;
+    background: url('~@/assets/images/me.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 3px solid #3E5290;
+}
+
+.basic-info {
+    display: flex;
+    flex-direction: column;
+    width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content;    /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
+    width: max-content;
+    margin: 30px auto;
+}
+
+.myself-content {
+    text-align: left;
+    margin: 0 15px;
+    align-self: center;
+}
+
 
 .title-html {
     display: none;
@@ -53,5 +108,9 @@
 @media only screen and (min-width: 768px) {
     .title-html {
         display: initial;
+    }
+
+    .basic-info {
+        flex-direction: row;
     }
 }
