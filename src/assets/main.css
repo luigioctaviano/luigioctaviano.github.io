@@ -1,0 +1,15 @@
+@import './base.css';
+@import './hamburger.css';
+@import 'fonts/font.css';
+
+
+#app {
+  font-weight: normal;
+  width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  font-family: 'Montserrat';
+}
