@@ -320,9 +320,9 @@ export default {
         width: 5%;
     }
 
-    .work-carousel-item-text,
+    /* .work-carousel-item-text,
     .work-carousel-item-thumbnail {
         width: 50%;
-    }
+    } */
 }
 </style>

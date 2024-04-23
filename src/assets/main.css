@@ -2,6 +2,9 @@
 @import './hamburger.css';
 @import 'fonts/font.css';
 
+html {
+  scroll-behavior: smooth;
+}
 
 #app {
   font-weight: normal;

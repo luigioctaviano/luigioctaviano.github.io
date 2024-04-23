@@ -17,10 +17,10 @@
                             </div>
                             <div class="what-content-title">
                                 <p>{{ item.title }}</p>
-                                <i :class="`mdi mdi-chevron-down-circle ${item.isHidden ? 'caret-down' : 'caret-up' }`"></i>
+                                <i :class="`mdi mdi-chevron-down-circle ${item.isHidden ? 'hide' : 'show' }`"></i>
                             </div>
                         </div>
-                        <span class="what-divider"></span>
+                        <span :class="`what-divider ${item.isHidden ? 'hide' : 'show' }`"></span>
                         <div :class="`what-content-expanded ${item.isHidden ? 'hide' : 'show' }`">
                             <div class="what-content-description">{{ item.description }}</div>
                             <br>
@@ -158,11 +158,17 @@ export default {
     background: #000;
     width: 0%;
     margin: 25px 0;
+    border-radius: 50px;
     animation: remove-what-border-bottom 0.5s both;
 }
 
-.what-content-texts:hover .what-divider {
+.what-divider.show {
     animation: add-what-border-bottom 0.5s both;
+}
+
+.what-divider.hide {
+    margin-left: auto;
+    animation: remove-what-border-bottom 0.5s both;
 }
 
 @keyframes remove-what-border-bottom {
@@ -193,6 +199,7 @@ export default {
 
 .what-content-expanded {
    display: block;
+   overflow: hidden;
 }
 
 .what-content-devtools {
@@ -203,35 +210,61 @@ export default {
     margin-right: 10px;
 }
 
-.what-content-expanded.hide {
-    display: none;
+.what-content-expanded.show {
+    animation: expand-content 0.5s both;
 }
 
-/* @keyframes expand-content {
+.what-content-expanded.hide {
+    animation: hide-content 0.5s both;
+}
+
+.what-content-title .mdi-chevron-down-circle.show:before {
+    animation: invert-caret 0.5s both;
+}
+
+.what-content-title .mdi-chevron-down-circle.hide:before {
+    animation: revert-caret 0.5s both;
+}
+
+@keyframes invert-caret {
     0% {
-        transform: translateY(-1000px);
-        height: 0;
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes revert-caret {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes expand-content {
+    0% {
+        max-height: 0px;
         opacity: 0;
     }
     100% {
-        transform: translateY(0);
-        height: 100%;
+        max-height: 500px;
         opacity: 1;
     }
 }
 
 @keyframes hide-content {
     0% {
-        transform: translateY(0);
-        height: 100%;
+        max-height: 500px;
         opacity: 1;
     }
     100% {
-        transform: translateY(-1000px);
-        height: 0;
+        max-height: 0;
         opacity: 0;
     }
-} */
+}
 
 
 

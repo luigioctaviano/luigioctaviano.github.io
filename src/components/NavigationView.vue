@@ -147,25 +147,39 @@ export default {
     }
 
     .navbar-item:hover:after {
-        animation: add-border-bottom 0.5s both;
+        animation: add-border-bottom 0.3s both;
+    }
+
+    .navbar-item:not(:hover):after {
+        margin-left: auto;
+        animation: remove-border-bottom 0.3s both;
     }
 
     @keyframes add-border-bottom {
         0% {
             height: 30%;
             width: 0;
-            font-weight: normal;
         }
         100% {
             height: 30%;
             width: 100%;
-            font-weight: bold;
+        }
+    }
+
+    @keyframes remove-border-bottom {
+        0% {
+            height: 30%;
+            width: 100%;
+        }
+        100% {
+            height: 30%;
+            width: 0;
         }
     }
 
 
     .navbar-item:hover {
-        font-weight: bolder;
+        font-weight: bold;
     }
 
     .navbar-item a {

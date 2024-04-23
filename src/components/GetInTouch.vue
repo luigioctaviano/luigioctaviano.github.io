@@ -65,10 +65,11 @@
     font-family: 'Montserrat';
     cursor: pointer;
     font-size: 17px;
+    width: 215px;
 }
 
 .contact-email-button  {
-    padding: 15px 45px;
+    padding: 15px 30px;
     background: #18A0FB;
     color: #FFF;
     margin-bottom: 25px;
@@ -120,14 +121,17 @@
 
     .contact-text-container {
         width: 65%;
+        margin-left: 80px;
     }
 
     .contact-buttons-container {
         width: 35%;
+        margin-right: 80px;
     }
 
     .contact-text-description {
-        padding: 0 80px;
+        padding: 0;
+        padding-right: 80px;
         text-align: left;
     }
 
@@ -143,6 +147,8 @@
     .contact-buttons {
         margin-bottom: unset;
         margin: auto;
+        margin-left: auto;
+        margin-right: 0;
     }
 }
 </style>

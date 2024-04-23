@@ -6,6 +6,7 @@ import WhatIDo from '../components/WhatIDo.vue'
 import MyWorks from '../components/MyWorks.vue'
 import GetInTouch from '../components/GetInTouch.vue'
 import FooterView from '../components/FooterView.vue'
+import BackToTop from '../components/BackToTop.vue'
 </script>
 
 <template>
@@ -16,4 +17,5 @@ import FooterView from '../components/FooterView.vue'
   <MyWorks />
   <GetInTouch />
   <FooterView />
+  <BackToTop />
 </template>
