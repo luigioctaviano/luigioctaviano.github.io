@@ -1,6 +1,12 @@
 <template>
     <div class="navigation-container">
         <nav class="navbar-container" id="navbarContainer">
+            <div class="navbar-logo">
+                <a href="#home">
+                    <img class="navbar-logo-icon logo-hero" src="../assets/images/logo/logo-hero.svg" />
+                    <img class="navbar-logo-icon logo-navi" src="../assets/images/logo/logo-navi.svg" />
+                </a>
+            </div>
             <div id="hamburgerIcon" @click="toggleNav()">
                 <span></span>
                 <span></span>
@@ -146,37 +152,6 @@ export default {
         background: #000000;
     }
 
-    .navbar-item:hover:after {
-        animation: add-border-bottom 0.3s both;
-    }
-
-    .navbar-item:not(:hover):after {
-        margin-left: auto;
-        animation: remove-border-bottom 0.3s both;
-    }
-
-    @keyframes add-border-bottom {
-        0% {
-            height: 30%;
-            width: 0;
-        }
-        100% {
-            height: 30%;
-            width: 100%;
-        }
-    }
-
-    @keyframes remove-border-bottom {
-        0% {
-            height: 30%;
-            width: 100%;
-        }
-        100% {
-            height: 30%;
-            width: 0;
-        }
-    }
-
 
     .navbar-item:hover {
         font-weight: bold;
@@ -196,6 +171,7 @@ export default {
         color: #FFFFFF;
         font-family: inherit;
         padding: 10px 18px;
+        cursor: pointer;
     }
 
     .navbar-list {
@@ -205,6 +181,29 @@ export default {
     .contact-buttons {
         display: flex;
         flex-direction: column;
+    }
+
+    .navbar-logo {
+        display: flex;
+    }
+
+    .navbar-logo-icon {
+        height: 50px;
+        width: auto;
+        margin: auto;
+        margin-left: 0;
+        position: absolute;
+        top: 9px;
+        left: 30px;
+    }
+
+    .navbar-container .navbar-logo .logo-navi {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .navbar-container.fixed .navbar-logo .logo-navi {
+        opacity: 1;
     }
 
     @media only screen and (min-width: 768px) {
@@ -276,6 +275,37 @@ export default {
 
         #hamburgerIcon {
             display: none;
+        }
+
+        .navbar-item:hover:after {
+            animation: add-border-bottom 0.3s both;
+        }
+
+        .navbar-item:not(:hover):after {
+            margin-left: auto;
+            animation: remove-border-bottom 0.3s both;
+        }
+
+        @keyframes add-border-bottom {
+            0% {
+                height: 30%;
+                width: 0;
+            }
+            100% {
+                height: 30%;
+                width: 100%;
+            }
+        }
+
+        @keyframes remove-border-bottom {
+            0% {
+                height: 30%;
+                width: 100%;
+            }
+            100% {
+                height: 30%;
+                width: 0;
+            }
         }
     }
 </style>

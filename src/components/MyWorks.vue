@@ -264,6 +264,12 @@ export default {
     margin-right: 30px;
 }
 
+@media only screen and (min-width: 425px) {
+    .work-header-container {
+        padding: 75px 65px;
+    }
+}
+
 @media only screen and (min-width: 992px) {
     .work-header-title {
         font-size: 48px;
