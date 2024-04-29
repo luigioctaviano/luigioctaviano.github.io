@@ -193,8 +193,8 @@ export default {
         margin: auto;
         margin-left: 0;
         position: absolute;
-        top: 9px;
-        left: 30px;
+        top: 13px;
+        left: 25px;
     }
 
     .navbar-container .navbar-logo .logo-navi {
@@ -269,6 +269,11 @@ export default {
     }
 
     @media only screen and (min-width: 992px) {
+        .navbar-logo-icon {
+            top: 9px;
+            left: 30px;
+        }
+
         .navbar-list {
             display: flex;
         }
