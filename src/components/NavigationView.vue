@@ -188,13 +188,13 @@ export default {
     }
 
     .navbar-logo-icon {
-        height: 50px;
+        height: 40px;
         width: auto;
         margin: auto;
         margin-left: 0;
         position: absolute;
-        top: 13px;
-        left: 25px;
+        top: 16px;
+        left: 24px;
     }
 
     .navbar-container .navbar-logo .logo-navi {
@@ -270,7 +270,8 @@ export default {
 
     @media only screen and (min-width: 992px) {
         .navbar-logo-icon {
-            top: 9px;
+            height: 45px;
+            top: 12px;
             left: 30px;
         }
 
