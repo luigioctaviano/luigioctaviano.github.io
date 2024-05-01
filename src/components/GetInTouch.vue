@@ -115,6 +115,7 @@ export default {
     color: #18A0FB;
     margin-bottom: 25px;
     text-decoration: none;
+    text-align: center;
 }
 
 .contact-buttons {
