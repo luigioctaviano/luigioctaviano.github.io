@@ -14,16 +14,16 @@
             </div>
             <ul id="navbarList" class="navbar-list">
                 <li class="navbar-item">
-                    <a href="#aboutMyself">About Myself</a>
+                    <a @click="closeNav()" class="navbar-link" href="#aboutMyself">About Myself</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#whatIdo">What I Do?</a>
+                    <a @click="closeNav()" class="navbar-link" href="#whatIdo">What I Do?</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#myWorks">My Works</a>
+                    <a @click="closeNav()" class="navbar-link" href="#myWorks">My Works</a>
                 </li>
                 <li class="navbar-item-button">
-                    <button class="navbar-button" onclick="location.href='#getInTouch';">Get in touch</button>
+                    <button @click="redirectContact()" class="navbar-button">Get in touch</button>
                 </li>
             </ul>
         </nav>
@@ -46,9 +46,22 @@ export default {
                 nav.classList.remove('fixed')
             }
         }
-
     },
     methods: {
+        redirectContact() {
+            location.href = '#getInTouch'
+            this.closeNav()
+        },
+        closeNav () {
+            const nav = document.getElementById('navbarContainer')
+            nav.classList.remove('mobile-toggle')
+
+            const hamburger = document.getElementById('hamburgerIcon')
+            hamburger.classList.remove('open')
+
+            const navList = document.getElementById("navbarList")
+            navList.classList.remove('active')
+        },
         toggleNav () {
             const nav = document.getElementById('navbarContainer')
             nav.classList.toggle('mobile-toggle')

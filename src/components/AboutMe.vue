@@ -1,5 +1,8 @@
 <template>
     <section class="about-container" id="aboutMyself">
+      <div class="about-image-container">
+        <div class="about-image-divider"></div>
+      </div>
       <div class="about-text-container">
         <div class="about-text">
           <h4 class="about-text-header">Who am I?</h4>
@@ -10,7 +13,6 @@
           <button class="about-button" onclick="location.href='#whatIdo';">See What I do</button>
         </div>
       </div>
-      <div class="about-image-container"></div>
     </section>
 </template>
 <style scoped>
@@ -21,12 +23,18 @@
   color: #000;
   flex-direction: column;
 }
+
 .about-text-container,
 .about-image-container {
   width: 100%;
   display: flex;
   height: inherit;
 }
+
+.about-text-container {
+  height: max-content;
+}
+
 .about-button {
   border-radius: 50px;
   border: 1px solid #18A0FB;
@@ -55,36 +63,32 @@
   font-weight: normal;
 }
 
+.about-image-divider {
+  background: linear-gradient(to bottom, transparent, #FFFFFF);
+  height: 250px;
+  width: 100%;
+  margin-top: auto;
+}
+
 .about-image-container {
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,205,0,1) 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/images/whoami.png');
 }
 
 @media only screen and (min-width: 992px) {
-  .about-container {
-    flex-direction: row;
-  }
-
-  .about-text-container,
-  .about-image-container {
-    width: 50%;
-  }
-
-  .about-image-container {
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,205,0,1) 100%);
-  }
-
-  .about-text {
-    text-align: left;
-  }
-
   .about-text-header {
     font-size: 48px;
   }
 
   .about-text-subheader {
     font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .about-image-container {
+    background-position-y: -140px;
   }
 }
 </style>

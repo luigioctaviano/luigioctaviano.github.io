@@ -12,12 +12,21 @@
             <div class="contact-buttons-container">
                 <div class="contact-buttons">
                     <button onclick="location.href='mailto:luigioctaviano@gmail.com'" class="contact-button contact-email-button">Send Email</button>
-                    <button class="contact-button contact-download-button">Download my CV</button>
+                    <button @click="downloadPDF()" class="contact-button contact-download-button">View my CV</button>
                 </div>
             </div>
         </div>
     </section>
 </template>
+<script>
+export default {
+    methods: {
+        downloadPDF () {
+            window.open('https://docs.google.com/document/d/1rQAeCmPtXNlGVp-wahY2ARWg4s7RX_bm/edit?usp=sharing&ouid=112578917741969975217&rtpof=true&sd=true', '_blank');
+        }
+    }
+}
+</script>
 <style scoped>
 .contact-container {
     height: auto;
