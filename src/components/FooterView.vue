@@ -1,8 +1,21 @@
 <template>
     <footer class="footer-container">
-        <p class="footer-container-text">© 2024 Luis Rafael S. Octaviano</p>
+        <p class="footer-container-text">© {{ getYear }} Luis Rafael S. Octaviano</p>
     </footer>
 </template>
+<script>
+export default {
+    data () {
+        return {
+            getYear: ''
+        }
+    },
+    mounted () {
+        const date = new Date()
+        this.getYear = date.getFullYear()
+    }
+}
+</script>
 <style scoped>
 .footer-container {
     height: 100px;

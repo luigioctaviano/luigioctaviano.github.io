@@ -7,7 +7,7 @@
         <div class="about-text">
           <h4 class="about-text-header">Who am I?</h4>
           <p class="about-text-subheader">
-            I am a developer with 7+ years of Experience in Web Development. <br>
+            I am a developer with {{getNumOfYears}}+ years of experience in Web Development. <br>
             Currently focused on Front-End but can do Back-End as well.
           </p>
           <button class="about-button" onclick="location.href='#whatIdo';">See What I do</button>
@@ -15,6 +15,28 @@
       </div>
     </section>
 </template>
+<script>
+export default {
+  data () {
+    return {
+      getNumOfYears: ''
+    }
+  },
+  mounted () {
+    const getOriginDate = new Date ('April 3, 2017 00:00:00')
+    const getCurrentDate = new Date ()
+
+    this.getNumOfYears = this.getYearsDifference(getCurrentDate, getOriginDate)
+  },
+  methods: {
+    getYearsDifference (current, origin) {
+      const getDifference = current - origin
+      const finalYearCount = new Date(getDifference);
+      return Math.abs(finalYearCount.getFullYear() - 1970);
+    }
+  }
+}
+</script>
 <style scoped>
 .about-container {
   background: #FFFFFF;
@@ -68,6 +90,8 @@
   height: 250px;
   width: 100%;
   margin-top: auto;
+  position: relative;
+  top: 1px;
 }
 
 .about-image-container {
@@ -75,6 +99,13 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url('../assets/images/whoami.png');
+}
+
+@media only screen and (max-height: 515px) {
+  .about-container,
+  .about-image-container {
+    height: fit-content;
+  }
 }
 
 @media only screen and (min-width: 992px) {

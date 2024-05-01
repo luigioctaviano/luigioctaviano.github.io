@@ -87,27 +87,19 @@ export default {
     },
     methods: {
         changePrev () {
-            const that = this
             if (this.counter !== 0) {
                 this.whatContents[this.counter].isActive = false
                 this.counter -= 1
                 this.whatContents[this.counter].isActive = true
                 this.activeType = 'active-prev'
-                setTimeout(function() {
-                    that.activeType = 'active'
-                }, 2000)
             } 
         },
         changeNext () {
-            const that = this
             if (this.whatContents.length !== (this.counter + 1)) {
                 this.whatContents[this.counter].isActive = false
                 this.counter += 1
                 this.whatContents[this.counter].isActive = true
                 this.activeType = 'active-next'
-                setTimeout(function() {
-                    that.activeType = 'active'
-                }, 2000)
             }
         },
         changeSelected (selected) {
@@ -171,6 +163,8 @@ export default {
 .work-carousel-items {
     width: 70%;
     padding: 0 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     min-height: 500px;
 }
 
