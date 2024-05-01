@@ -4,7 +4,7 @@
             <h4 class="work-header-title">My Works</h4>
             <p class="work-header-subtitle">Here are some of the works that I created</p>
         </div>
-        <div class="work-carousel-container">
+        <div class="work-carousel-container" id="carouselContainer">
             <div class="work-carousel-prev">
                 <button v-if="!(counter === 0)" class="work-carousel-nav-buttons" @click="changePrev">
                     <i class="mdi mdi-chevron-left-circle"></i>
@@ -42,6 +42,9 @@ export default {
         return {
             counter: 0,
             activeType: 'active',
+            touchXPosBegin: 0,
+            touchXPosEnd: 0,
+            isCarouselVisible: false,
             whatContents: [
                 {
                     title: 'Philippine Collegian',
@@ -60,27 +63,51 @@ export default {
             ]
         }
     },
+    mounted () {
+        const that = this
+        const observer = new IntersectionObserver(function(entries) {
+            if(entries[0].isIntersecting === true) {
+                that.isCarouselVisible = true;
+                document.addEventListener('touchstart', e => {
+                    that.touchXPosBegin = e.changedTouches[0].screenX
+                })
+
+                document.addEventListener('touchend', e => {
+                    that.touchXPosEnd = e.changedTouches[0].screenX
+                    that.handleSwipe()
+                })
+            } else {
+                that.isCarouselVisible = false;
+            }
+        }, { 
+            threshold: [1] 
+        });
+
+        observer.observe(document.querySelector("#carouselContainer"));
+    },
     methods: {
         changePrev () {
+            const that = this
             if (this.counter !== 0) {
                 this.whatContents[this.counter].isActive = false
                 this.counter -= 1
                 this.whatContents[this.counter].isActive = true
                 this.activeType = 'active-prev'
                 setTimeout(function() {
-                    this.activeType = 'active'
-                }, 1000)
+                    that.activeType = 'active'
+                }, 2000)
             } 
         },
         changeNext () {
+            const that = this
             if (this.whatContents.length !== (this.counter + 1)) {
                 this.whatContents[this.counter].isActive = false
                 this.counter += 1
                 this.whatContents[this.counter].isActive = true
                 this.activeType = 'active-next'
                 setTimeout(function() {
-                    this.activeType = 'active'
-                }, 1000)
+                    that.activeType = 'active'
+                }, 2000)
             }
         },
         changeSelected (selected) {
@@ -96,6 +123,15 @@ export default {
         },
         getImageURL (filename) {
             return new URL(`../assets/images/myworks/${filename}.png`, import.meta.url).href;
+        },
+        handleSwipe () {
+            if (this.isCarouselVisible) {
+                if (this.touchXPosEnd < this.touchXPosBegin) {
+                    this.changeNext()
+                } else if (this.touchXPosEnd > this.touchXPosBegin) {
+                    this.changePrev()
+                }
+            }
         }
     }
 }
@@ -107,6 +143,7 @@ export default {
   display: block;
   color: #000;
   flex-direction: column;
+  z-index: 7;
 }
 
 .work-header-container,
@@ -264,7 +301,7 @@ export default {
     margin-right: 30px;
 }
 
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 375px) {
     .work-header-container {
         padding: 75px 65px;
     }
