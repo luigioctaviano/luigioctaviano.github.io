@@ -272,6 +272,11 @@ export default {
     transform: rotate(180deg);
 }
 
+@media only screen and (min-width: 375px) {
+    .what-header-subtitle {
+        margin: 0 15px;
+    }
+}
 
 @media only screen and (min-width: 425px) {
     .what-content-title {
