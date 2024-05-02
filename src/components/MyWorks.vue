@@ -268,6 +268,8 @@ export default {
     font-size: 30px;
     cursor: pointer;
     margin: auto;
+    padding: 0;
+    color: #000000;
 }
 
 .work-carousel-indicator {

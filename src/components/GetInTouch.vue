@@ -143,6 +143,8 @@ export default {
     cursor: pointer;
     transition: border 0.3s ease;
     pointer-events: auto;
+    color: #000000;
+    padding: 0;
 }
 
 .contact-text-button:last-child {
