@@ -55,7 +55,7 @@ export default {
                 },
                 {
                     title: 'This Website',
-                    description: 'Believe it or not, this is my first portfolio website that I created after being in the industry for more than half a decade. No joke.',
+                    description: 'I personally created this website to showcase my experience being in the industry for the past 7+ years.',
                     thumbnail: 'luigi-site',
                     url: '',
                     isActive: false
